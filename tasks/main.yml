@@ -1,0 +1,13 @@
+---
+
+
+- name: 'Incluindo tasks para a instalação do pacote Git no Linux => {{ ansible_distribution }}'
+  include_tasks: 'install.yml'
+  tags: 
+   - main
+
+
+- name: 'Incluindo tasks para as configurações de usuário'
+  include_tasks: 'git_config_user.yml'
+  tags: 
+   - main

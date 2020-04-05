@@ -1,0 +1,24 @@
+---
+
+- name: "Configura a propriedade global do Git user.name com o valor => {{ git_user_name }}"
+  when: git_user_name is defined
+  git_config:
+    name: 'user.name'
+    scope: global
+    value: "{{ git_user_name }}"
+  tags:
+    - git
+    - git_config
+    - git_config_user
+
+
+- name: "Configura a propriedade global do Git user.email com o valor => {{ git_user_email }}"
+  when: git_user_email is defined
+  git_config:
+    name: 'user.email'
+    scope: global
+    value: "{{ git_user_email }}"
+  tags:
+    - git
+    - git_config
+    - git_config_user
