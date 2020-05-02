@@ -3,14 +3,14 @@
 
 - name: 'Incluindo tasks para a instalação do pacote Gi com sudo na Distribuição => {{ ansible_distribution }}'
   when: with_sudo
-  include_tasks: 'install.yml'
+  include_tasks: 'sudo_install.yml'
   tags: 
    - main
 
 
 - name: 'Incluindo tasks para a instalação do pacote Git sem sudo na Distribuição => {{ ansible_distribution }}'
   when: not with_sudo
-  include_tasks: 'install.yml'
+  include_tasks: 'non_sudo_install.yml'
   tags: 
    - main
 
