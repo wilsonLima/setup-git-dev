@@ -6,7 +6,6 @@
     name: "git"
     state: present
     update_cache: yes
-  become: true
   tags:
     - git
     - git_install
@@ -18,7 +17,6 @@
     name: "git"
     state: present
     disable_gpg_check: yes
-  become: true
   tags:
     - git
     - git_install
@@ -30,8 +28,6 @@
     name: "git"
     state: latest
     force: yes
-    oldpackage: yes
-  become: true
   tags:
     - git
     - git_install

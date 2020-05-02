@@ -29,6 +29,7 @@ Tags da Role
 Variáveis da Role 
 --------------
 
+- with_sudo: Especifica se vai ser utilizado o comando sudo na instalação (valores yes ou no). Valor padrão: yes .
 - git_user_name: Representa o valor da propriedade global do Git user.name.
 - git_user_email: Representa o valor da propriedade global do Git user.email.
 

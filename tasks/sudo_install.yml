@@ -1,0 +1,36 @@
+---
+
+- name: "Instalando os pacotes do Git no {{ ansible_distribution }}"
+  when: ansible_os_family | lower == "debian"
+  apt:
+    name: "git"
+    state: present
+    update_cache: yes
+  become: true
+  tags:
+    - git
+    - git_install
+
+
+- name: "Instalando pacotes do Git no {{ ansible_distribution }}"
+  when: ansible_distribution | lower == "fedora"
+  dnf:
+    name: "git"
+    state: present
+    disable_gpg_check: yes
+  become: true
+  tags:
+    - git
+    - git_install
+
+
+- name: "Instalando pacotes do Git no SUSE ou OpenSUSE"
+  when: ansible_os_family | lower == "suse"
+  zypper:
+    name: "git"
+    state: latest
+    force: yes
+  become: true
+  tags:
+    - git
+    - git_install
