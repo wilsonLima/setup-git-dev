@@ -29,7 +29,7 @@
   zypper:
     name: "git"
     state: latest
-    force: yes
+    update_cache: yes
   become: true
   tags:
     - git

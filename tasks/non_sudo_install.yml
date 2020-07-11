@@ -27,7 +27,7 @@
   zypper:
     name: "git"
     state: latest
-    force: yes
+    update_cache: yes
   tags:
     - git
     - git_install
